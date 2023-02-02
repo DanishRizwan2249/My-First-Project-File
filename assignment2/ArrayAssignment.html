@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      form {
+        margin: 20px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        font-size: 20px;
+        width: 500px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="numbers">Enter numbers separated by commas:</label>
+      <input type="text" id="numbers">
+      <input type="submit" value="Submit" onclick="findMinMax()">
+    </form>
+    <p id="result"></p>
+    <script>
+      function findMinMax() {
+        // Prevent the form from submitting
+        event.preventDefault();
+        // Get the input value
+        let input = document.getElementById("numbers").value;
+        // Split the input string into an array of numbers
+        let numbers = input.split(",").map(Number);
+        // Sort the array
+        numbers.sort((a, b) => a - b);
+        // Find the minimum and maximum values
+        let min = numbers[0];
+        let max = numbers[numbers.length - 1];
+        // Display the result
+        document.getElementById("result").innerHTML = `The minimum value is ${min} and the maximum value is ${max}.`;
+      }
+    </script>
+  </body>
+</html>
