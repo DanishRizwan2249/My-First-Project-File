@@ -1,5 +1,5 @@
 const greet = (name) => {
-    return `Hi ${name}!`;
+    return `Hi ${name}`;
 };
 
 console.log(greet('Danish'));
